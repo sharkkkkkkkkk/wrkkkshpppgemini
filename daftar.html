@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Seni Berbicara dengan AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="header">
+                <h2>PENDAFTARAN WORKSHOP SENI BERBICARA DENGAN AI</h2>
+                <p>Panduan Prompting Efektif untuk Menguasai AI</p>
+            </div>
+            <form id="signup-form">
+                <div class="input-group">
+                    <input type="text" id="nama" name="Nama" required>
+                    <label for="nama">Nama Lengkap</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="nim" name="NIM" required>
+                    <label for="nim">NIM</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="wa" name="WA" required>
+                    <label for="wa">No. WhatsApp</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="Email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <select id="prodi" name="Prodi" required>
+                        <option value="" disabled selected>Pilih Program Studi</option>
+                        <option value="S1 Ilmu Komputer">S1 Ilmu Komputer</option>
+                        <option value="S1 Manajemen">S1 Manajemen</option>
+                        <option value="S1 Pendidikan Bahasa Inggris">S1 Pendidikan Bahasa Inggris</option>
+                        <option value="S1 Keperawatan">S1 Keperawatan</option>
+                        <option value="D3 Kebidanan">D3 Kebidanan</option>
+                        <option value="D3 Keperawatan">D3 Keperawatan</option>
+                        <option value="S1 Farmasi">S1 Farmasi</option>
+                        <option value="S1 Kebidanan">S1 Kebidanan</option>
+                        <option value="Profesi Ners">Profesi Ners</option>
+                        <option value="Profesi Bidan">Profesi Bidan</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select id="semester" name="Semester" required>
+                        <option value="" disabled selected>Pilih Semester</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+                    </select>
+                </div>
+                <button type="submit" id="submit-btn">Daftar Sekarang</button>
+                <div id="loading" class="hidden">Mengirim...</div>
+                <div id="response-message"></div>
+            </form>
+        </div>
+    </div>
+    <script src="matrix.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-purple: #9370DB;
+    --hover-purple: #A083E1;
+    --dark-bg: #121212;
+    --card-bg: #1E1E1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --border-color: #333333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+}
+.container { max-width: 800px; width: 100%; text-align: center; }
+
+/* --- Animasi Masuk Sederhana --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 { color: var(--text-primary); font-weight: 600; }
+.section-title { font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 20px; }
+
+/* --- Header Section with Background --- */
+.hero {
+    position: relative;
+    padding: 40px 20px 60px 20px; /* Padding atas disesuaikan untuk galeri */
+    border-bottom: 1px solid var(--border-color);
+    animation: fadeIn 1s ease-out;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('images/background-hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.hero > * { position: relative; z-index: 2; }
+
+/* --- Header Gallery (BARU) --- */
+.header-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+.gallery-item {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Membuat gambar pas tanpa distorsi */
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.gallery-item:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 15px rgba(147, 112, 219, 0.5);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.logo { height: 45px; width: auto; object-fit: contain; }
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(147, 112, 219, 0.7);
+}
+.hero-subtitle { font-size: 1.5rem; font-weight: 400; color: var(--text-secondary); margin-top: 10px; margin-bottom: 20px; }
+.hero-description { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+/* --- General Section Image Style --- */
+.section-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    margin: 0 auto 40px auto;
+    display: block;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* --- Benefits Section (GRID) --- */
+.benefits { padding: 50px 20px; animation: fadeIn 1.2s ease-out; }
+.benefit-header { font-size: 1.2rem; margin-bottom: 30px; }
+.benefit-header strong { color: var(--primary-purple); font-weight: 700; }
+.benefit-card { margin-bottom: 20px; }
+.benefit-card ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; 
+}
+.benefit-card li {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.benefit-card li:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); }
+.benefit-card li::before {
+    content: '✓';
+    display: block;
+    font-size: 2.5rem; 
+    color: var(--primary-purple);
+    margin: 0 auto 15px auto; 
+    font-weight: bold;
+}
+.benefit-card li strong { display: block; font-size: 1.1rem; color: var(--text-primary); margin-bottom: 5px; }
+.benefit-footer { font-style: italic; color: var(--text-secondary); }
+
+/* --- CTA Section with Background --- */
+.cta-section {
+    position: relative;
+    padding: 50px 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: fadeIn 1.4s ease-out;
+    background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('images/background-cta.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.cta-section > * { position: relative; z-index: 2; }
+.cta-section p { max-width: 500px; margin: 0 auto 30px auto; }
+.button-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.btn-primary { background-color: var(--primary-purple); color: var(--text-primary); }
+.btn-primary:hover, .btn-primary:focus { background-color: var(--hover-purple); transform: translateY(-3px); box-shadow: 0 4px 15px rgba(147, 112, 219, 0.4); outline: none; }
+.btn-secondary { background-color: transparent; color: var(--primary-purple); border-color: var(--primary-purple); }
+.btn-secondary:hover, .btn-secondary:focus { background-color: var(--primary-purple); color: var(--text-primary); transform: translateY(-3px); outline: none; }
+
+/* --- Footer --- */
+footer { padding: 30px 20px; margin-top: 40px; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; }
+
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    .logo { height: 35px; }
+    .hero, .cta-section { padding: 40px 15px; }
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .benefits { padding: 40px 15px; }
+    .section-title { font-size: 1.6rem; }
+    .button-group { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 320px; }
+}
+@media (max-width: 480px) {
+    .gallery-item { width: 60px; height: 60px; }
+    .header-gallery { gap: 10px; }
+    .hero-title { font-size: 1.8rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .benefit-card ul { grid-template-columns: 1fr; }
+}
