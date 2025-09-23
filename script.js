@@ -7,6 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // GANTI DENGAN URL WEB APP ANDA DARI GOOGLE APPS SCRIPT
     const scriptURL = 'https://script.google.com/macros/s/AKfycbw8sAUTkX9xx8atB9D1U3WIwFg0YXS-jJChnJIUcehZsb9J5GbtMMVlThik-nwccyZ_/exec';
 
+     fetch(scriptURL)
+        .then(response => response.json())
+        .then(data => {
+            if (data.count >= 40) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Pendaftaran Penuh';
+                form.classList.add('disabled'); // opsional bisa untuk CSS
+            }
+        })
+        .catch(err => console.error('Gagal cek kuota:', err));
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -36,4 +46,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadingDiv.classList.add('hidden');
             });
     });
+
 });
