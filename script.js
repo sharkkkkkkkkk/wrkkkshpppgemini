@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
      fetch(scriptURL)
         .then(response => response.json())
         .then(data => {
-            if (data.count >= 40) {
+            if (data.count >= 48) {
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Pendaftaran Penuh';
                 form.classList.add('disabled'); // opsional bisa untuk CSS
@@ -48,4 +48,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
 
