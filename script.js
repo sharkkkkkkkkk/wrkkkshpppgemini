@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const responseMsg = document.getElementById('response-message');
     
     // GANTI DENGAN URL WEB APP ANDA DARI GOOGLE APPS SCRIPT
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw8sAUTkX9xx8atB9D1U3WIwFg0YXS-jJChnJIUcehZsb9J5GbtMMVlThik-nwccyZ_/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwEaANk8FxfTIvYsUjztNkaFrkdfZE5vYJ3PWyTRK4d90Sz0WhJsnR3jthtNtUNOn14/exec';
 
      fetch(scriptURL)
         .then(response => response.json())
@@ -48,3 +48,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
